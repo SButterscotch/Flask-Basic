@@ -1,12 +1,12 @@
 # Let's start
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, render_template
 
 start = Flask(__name__)
 
 @start.route("/")
 def home():
-    return (f"<h1> This is the home page <h1>\n <h2> I'll try Implementing firebase <h2> \n",
-            f"<h3> This is gonna be a gateay to Django <h3>")
+    return render_template("index.html")
+            
 
 @start.route("/<name>")
 def user(name):
@@ -14,7 +14,7 @@ def user(name):
 
 @start.route("/admin")
 def admin():
-    return redirect(url_for("home"))
+    return redirect(url_for("user", name="Admin"))
 
 if __name__ == "__main__":
     start.run()
