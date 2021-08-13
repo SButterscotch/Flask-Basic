@@ -6,15 +6,15 @@ start = Flask(__name__)
 @start.route("/")
 def home():
     return render_template("index.html")
-            
 
 @start.route("/<name>")
 def user(name):
-    return f"<h1> Hi {name} <h1>"
+    return render_template("user.html", sname = name, length= str(len(name)))
 
 @start.route("/admin")
 def admin():
-    return redirect(url_for("user", name="Admin"))
+    return redirect("user", name="Admin")
+
 
 if __name__ == "__main__":
     start.run()
