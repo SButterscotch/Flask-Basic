@@ -17,4 +17,4 @@ def admin():
 
 
 if __name__ == "__main__":
-    start.run()
+    start.run(debug=True)
