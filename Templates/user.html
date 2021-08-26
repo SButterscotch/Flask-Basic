@@ -1,6 +1,7 @@
-{% extends "base.html"%}
-{% block t %} {{sname}} {% endblock %}
-{% block b %}
-<h1>Hello {{sname}}</h1>
-<p1>Your name is {{length}} letters!</p1>
+{% extends 'base.html' %}
+{% block title %}{{sname}}{% endblock %}
+{% block style%}style="background-color:rgb(100, 100, 100);"{% endblock %}
+{% block body %}
+<h1>Hello {{sname}}!</h1>
+<p1>Your name is {{length}} letters long, your name starts with {{initial}} which means (I haven't worked on web scraping yet so idk..)</p1>
 {% endblock %}
